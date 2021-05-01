@@ -33,13 +33,14 @@ namespace Ex1
                 _item.SubItems.Add(_array[3]);
                 _item.SubItems.Add(_array[4]);
                 _item.SubItems.Add(_array[5]);
-                listView1.Items.Add(_item);
+                lviCongNgheNET.Items.Add(_item);
             }
-            listView1.View = View.Details;
+            lviCongNgheNET.View = View.Details;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+
             for (int index = listView1.CheckedIndices.Count - 1; index >= 0; index--)
             {
                 listView1.Items.RemoveAt(listView1.CheckedIndices[index]);
@@ -69,6 +70,20 @@ namespace Ex1
 
             }
 
+        private void lviCongNgheNET_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lviCongNgheNET_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            var item = e.Item;
+            txtID.Text = item.Text;           
+            txtName.Text = item.SubItems[1].Text;
+            txtClass.Text = item.SubItems[2].Text;
+            mtbDatebirth.Text = item.SubItems[3].Text;
+            txtGender.Text = item.SubItems[4].Text;
+            txtAddress.Text = item.SubItems[5].Text;
         }
     }
 }

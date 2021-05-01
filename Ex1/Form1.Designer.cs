@@ -52,7 +52,7 @@ namespace Ex1
             this.btnDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listView1
+            // lviCongNgheNET
             // 
             this.listView1.CheckBoxes = true;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -80,22 +80,29 @@ namespace Ex1
             // cHName
             // 
             this.cHName.Text = "Tên SV";
+            this.cHName.Width = 194;
             // 
             // cHClass
             // 
             this.cHClass.Text = "Lớp";
+            this.cHClass.Width = 89;
             // 
             // cHDatebirth
             // 
             this.cHDatebirth.Text = "Ngày sinh";
+            this.cHDatebirth.Width = 130;
+
             // 
             // cHGender
             // 
             this.cHGender.Text = "Giới tính";
+            this.cHGender.Width = 79;
+
             // 
             // cHAddress
             // 
             this.cHAddress.Text = "Quê quán";
+            this.cHAddress.Width = 320;
             // 
             // label1
             // 
@@ -240,7 +247,7 @@ namespace Ex1
             this.Controls.Add(this.lblClass);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.lviCongNgheNET);
             this.Name = "frmCongNgheNET";
             this.Text = "CÔNG NGHỆ .NET";
             this.Load += new System.EventHandler(this.frmCongNgheNET_Load);
@@ -251,7 +258,7 @@ namespace Ex1
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lviCongNgheNET;
         private System.Windows.Forms.ColumnHeader cHID;
         private System.Windows.Forms.ColumnHeader cHName;
         private System.Windows.Forms.ColumnHeader cHClass;
