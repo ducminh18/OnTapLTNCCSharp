@@ -20,7 +20,7 @@ namespace Ex1
 
         private void frmCongNgheNET_Load(object sender, EventArgs e)
         {
-            StreamReader strRead = new StreamReader(Application.StartupPath + "\\CongNgheNET.txt");
+            StreamReader strRead = new StreamReader(Environment.CurrentDirectory + "\\CongNgheNET.txt");
             while(!strRead.EndOfStream)
             {
                 string _str = strRead.ReadLine();
@@ -40,23 +40,35 @@ namespace Ex1
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string masv = txtID.Text;
-            if (masv.Length == 0)
+
+            for (int index = listView1.CheckedIndices.Count - 1; index >= 0; index--)
             {
-                MessageBox.Show("Chưa chọn sinh viên");
-                return;
-            }   
-            foreach (ListViewItem it in lviCongNgheNET.Items)
-            {
-                if (it.Text == masv)
-                {
-                    it.Remove();
-                    MessageBox.Show("Xoá thành công");
-                    return;
-                }    
+                listView1.Items.RemoveAt(listView1.CheckedIndices[index]);
             }
-            MessageBox.Show("Không tìm thấy dữ liệu cần xoá");
         }
+
+        private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = listView1.SelectedItems[0];
+                txtID.Text = selectedItem.Text;
+                txtName.Text = selectedItem.SubItems[1].Text;
+                txtClass.Text = selectedItem.SubItems[2].Text;
+                mtbDatebirth.Text = selectedItem.SubItems[3].Text;
+                txtGender.Text = selectedItem.SubItems[4].Text;
+                txtAddress.Text = selectedItem.SubItems[5].Text;
+            }
+            else
+            {
+                txtID.Text = "";
+                txtName.Text = "";
+                txtClass.Text = "";
+                mtbDatebirth.Text = "";
+                txtGender.Text = "";
+                txtAddress.Text = "";
+
+            }
 
         private void lviCongNgheNET_SelectedIndexChanged(object sender, EventArgs e)
         {

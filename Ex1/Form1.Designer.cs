@@ -29,7 +29,7 @@ namespace Ex1
         /// </summary>
         private void InitializeComponent()
         {
-            this.lviCongNgheNET = new System.Windows.Forms.ListView();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.cHID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cHName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cHClass = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -54,22 +54,24 @@ namespace Ex1
             // 
             // lviCongNgheNET
             // 
-            this.lviCongNgheNET.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listView1.CheckBoxes = true;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.cHID,
             this.cHName,
             this.cHClass,
             this.cHDatebirth,
             this.cHGender,
             this.cHAddress});
-            this.lviCongNgheNET.HideSelection = false;
-            this.lviCongNgheNET.Location = new System.Drawing.Point(12, 61);
-            this.lviCongNgheNET.Name = "lviCongNgheNET";
-            this.lviCongNgheNET.Size = new System.Drawing.Size(897, 314);
-            this.lviCongNgheNET.TabIndex = 0;
-            this.lviCongNgheNET.UseCompatibleStateImageBehavior = false;
-            this.lviCongNgheNET.View = System.Windows.Forms.View.Details;
-            this.lviCongNgheNET.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lviCongNgheNET_ItemSelectionChanged);
-            this.lviCongNgheNET.SelectedIndexChanged += new System.EventHandler(this.lviCongNgheNET_SelectedIndexChanged);
+            this.listView1.FullRowSelect = true;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(12, 70);
+            this.listView1.MultiSelect = false;
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(897, 314);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView1_ItemSelectionChanged);
             // 
             // cHID
             // 
@@ -89,11 +91,13 @@ namespace Ex1
             // 
             this.cHDatebirth.Text = "Ngày sinh";
             this.cHDatebirth.Width = 130;
+
             // 
             // cHGender
             // 
             this.cHGender.Text = "Giới tính";
             this.cHGender.Width = 79;
+
             // 
             // cHAddress
             // 
