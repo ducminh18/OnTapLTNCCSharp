@@ -29,7 +29,13 @@ namespace Ex1
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lviCongNgheNET = new System.Windows.Forms.ListView();
+            this.cHID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cHName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cHClass = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cHDatebirth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cHGender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cHAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.lblClass = new System.Windows.Forms.Label();
@@ -44,30 +50,55 @@ namespace Ex1
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.mtbDatebirth = new System.Windows.Forms.MaskedTextBox();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.cHID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cHName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cHClass = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cHDatebirth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cHGender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cHAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
-            // listView1
+            // lviCongNgheNET
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lviCongNgheNET.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.cHID,
             this.cHName,
             this.cHClass,
             this.cHDatebirth,
             this.cHGender,
             this.cHAddress});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 70);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(897, 314);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lviCongNgheNET.HideSelection = false;
+            this.lviCongNgheNET.Location = new System.Drawing.Point(12, 61);
+            this.lviCongNgheNET.Name = "lviCongNgheNET";
+            this.lviCongNgheNET.Size = new System.Drawing.Size(897, 314);
+            this.lviCongNgheNET.TabIndex = 0;
+            this.lviCongNgheNET.UseCompatibleStateImageBehavior = false;
+            this.lviCongNgheNET.View = System.Windows.Forms.View.Details;
+            this.lviCongNgheNET.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lviCongNgheNET_ItemSelectionChanged);
+            this.lviCongNgheNET.SelectedIndexChanged += new System.EventHandler(this.lviCongNgheNET_SelectedIndexChanged);
+            // 
+            // cHID
+            // 
+            this.cHID.Text = "Mã SV";
+            // 
+            // cHName
+            // 
+            this.cHName.Text = "Tên SV";
+            this.cHName.Width = 194;
+            // 
+            // cHClass
+            // 
+            this.cHClass.Text = "Lớp";
+            this.cHClass.Width = 89;
+            // 
+            // cHDatebirth
+            // 
+            this.cHDatebirth.Text = "Ngày sinh";
+            this.cHDatebirth.Width = 130;
+            // 
+            // cHGender
+            // 
+            this.cHGender.Text = "Giới tính";
+            this.cHGender.Width = 79;
+            // 
+            // cHAddress
+            // 
+            this.cHAddress.Text = "Quê quán";
+            this.cHAddress.Width = 320;
             // 
             // label1
             // 
@@ -193,30 +224,6 @@ namespace Ex1
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // cHID
-            // 
-            this.cHID.Text = "Mã SV";
-            // 
-            // cHName
-            // 
-            this.cHName.Text = "Tên SV";
-            // 
-            // cHClass
-            // 
-            this.cHClass.Text = "Lớp";
-            // 
-            // cHDatebirth
-            // 
-            this.cHDatebirth.Text = "Ngày sinh";
-            // 
-            // cHGender
-            // 
-            this.cHGender.Text = "Giới tính";
-            // 
-            // cHAddress
-            // 
-            this.cHAddress.Text = "Quê quán";
-            // 
             // frmCongNgheNET
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -236,7 +243,7 @@ namespace Ex1
             this.Controls.Add(this.lblClass);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.lviCongNgheNET);
             this.Name = "frmCongNgheNET";
             this.Text = "CÔNG NGHỆ .NET";
             this.Load += new System.EventHandler(this.frmCongNgheNET_Load);
@@ -247,7 +254,7 @@ namespace Ex1
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lviCongNgheNET;
         private System.Windows.Forms.ColumnHeader cHID;
         private System.Windows.Forms.ColumnHeader cHName;
         private System.Windows.Forms.ColumnHeader cHClass;

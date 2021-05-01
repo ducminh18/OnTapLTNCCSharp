@@ -33,14 +33,45 @@ namespace Ex1
                 _item.SubItems.Add(_array[3]);
                 _item.SubItems.Add(_array[4]);
                 _item.SubItems.Add(_array[5]);
-                listView1.Items.Add(_item);
+                lviCongNgheNET.Items.Add(_item);
             }
-            listView1.View = View.Details;
+            lviCongNgheNET.View = View.Details;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            string masv = txtID.Text;
+            if (masv.Length == 0)
+            {
+                MessageBox.Show("Chưa chọn sinh viên");
+                return;
+            }   
+            foreach (ListViewItem it in lviCongNgheNET.Items)
+            {
+                if (it.Text == masv)
+                {
+                    it.Remove();
+                    MessageBox.Show("Xoá thành công");
+                    return;
+                }    
+            }
+            MessageBox.Show("Không tìm thấy dữ liệu cần xoá");
+        }
 
+        private void lviCongNgheNET_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lviCongNgheNET_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            var item = e.Item;
+            txtID.Text = item.Text;           
+            txtName.Text = item.SubItems[1].Text;
+            txtClass.Text = item.SubItems[2].Text;
+            mtbDatebirth.Text = item.SubItems[3].Text;
+            txtGender.Text = item.SubItems[4].Text;
+            txtAddress.Text = item.SubItems[5].Text;
         }
     }
 }
