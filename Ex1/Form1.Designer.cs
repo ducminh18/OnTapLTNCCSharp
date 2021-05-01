@@ -30,6 +30,12 @@ namespace Ex1
         private void InitializeComponent()
         {
             this.listView1 = new System.Windows.Forms.ListView();
+            this.cHID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cHName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cHClass = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cHDatebirth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cHGender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cHAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.lblClass = new System.Windows.Forms.Label();
@@ -44,16 +50,11 @@ namespace Ex1
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.mtbDatebirth = new System.Windows.Forms.MaskedTextBox();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.cHID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cHName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cHClass = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cHDatebirth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cHGender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cHAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listView1
             // 
+            this.listView1.CheckBoxes = true;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.cHID,
             this.cHName,
@@ -61,13 +62,40 @@ namespace Ex1
             this.cHDatebirth,
             this.cHGender,
             this.cHAddress});
+            this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 70);
+            this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(897, 314);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView1_ItemSelectionChanged);
+            // 
+            // cHID
+            // 
+            this.cHID.Text = "Mã SV";
+            // 
+            // cHName
+            // 
+            this.cHName.Text = "Tên SV";
+            // 
+            // cHClass
+            // 
+            this.cHClass.Text = "Lớp";
+            // 
+            // cHDatebirth
+            // 
+            this.cHDatebirth.Text = "Ngày sinh";
+            // 
+            // cHGender
+            // 
+            this.cHGender.Text = "Giới tính";
+            // 
+            // cHAddress
+            // 
+            this.cHAddress.Text = "Quê quán";
             // 
             // label1
             // 
@@ -192,30 +220,6 @@ namespace Ex1
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // cHID
-            // 
-            this.cHID.Text = "Mã SV";
-            // 
-            // cHName
-            // 
-            this.cHName.Text = "Tên SV";
-            // 
-            // cHClass
-            // 
-            this.cHClass.Text = "Lớp";
-            // 
-            // cHDatebirth
-            // 
-            this.cHDatebirth.Text = "Ngày sinh";
-            // 
-            // cHGender
-            // 
-            this.cHGender.Text = "Giới tính";
-            // 
-            // cHAddress
-            // 
-            this.cHAddress.Text = "Quê quán";
             // 
             // frmCongNgheNET
             // 

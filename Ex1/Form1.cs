@@ -20,7 +20,7 @@ namespace Ex1
 
         private void frmCongNgheNET_Load(object sender, EventArgs e)
         {
-            StreamReader strRead = new StreamReader(Application.StartupPath + "\\CongNgheNET.txt");
+            StreamReader strRead = new StreamReader(Environment.CurrentDirectory + "\\CongNgheNET.txt");
             while(!strRead.EndOfStream)
             {
                 string _str = strRead.ReadLine();
@@ -40,6 +40,34 @@ namespace Ex1
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            for (int index = listView1.CheckedIndices.Count - 1; index >= 0; index--)
+            {
+                listView1.Items.RemoveAt(listView1.CheckedIndices[index]);
+            }
+        }
+
+        private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = listView1.SelectedItems[0];
+                txtID.Text = selectedItem.Text;
+                txtName.Text = selectedItem.SubItems[1].Text;
+                txtClass.Text = selectedItem.SubItems[2].Text;
+                mtbDatebirth.Text = selectedItem.SubItems[3].Text;
+                txtGender.Text = selectedItem.SubItems[4].Text;
+                txtAddress.Text = selectedItem.SubItems[5].Text;
+            }
+            else
+            {
+                txtID.Text = "";
+                txtName.Text = "";
+                txtClass.Text = "";
+                mtbDatebirth.Text = "";
+                txtGender.Text = "";
+                txtAddress.Text = "";
+
+            }
 
         }
     }
