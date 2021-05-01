@@ -17,7 +17,6 @@ namespace Ex1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmCongNgheNET());
-            //Hello, first commit.
         }
     }
 }
