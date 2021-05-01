@@ -33,9 +33,9 @@ namespace Ex1
                 _item.SubItems.Add(_array[3]);
                 _item.SubItems.Add(_array[4]);
                 _item.SubItems.Add(_array[5]);
-                lviCongNgheNET.Items.Add(_item);
+                listView1.Items.Add(_item);
             }
-            lviCongNgheNET.View = View.Details;
+            listView1.View = View.Details;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -67,23 +67,7 @@ namespace Ex1
                 mtbDatebirth.Text = "";
                 txtGender.Text = "";
                 txtAddress.Text = "";
-
             }
-
-        private void lviCongNgheNET_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lviCongNgheNET_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
-        {
-            var item = e.Item;
-            txtID.Text = item.Text;           
-            txtName.Text = item.SubItems[1].Text;
-            txtClass.Text = item.SubItems[2].Text;
-            mtbDatebirth.Text = item.SubItems[3].Text;
-            txtGender.Text = item.SubItems[4].Text;
-            txtAddress.Text = item.SubItems[5].Text;
-        }
+        }        
     }
 }
