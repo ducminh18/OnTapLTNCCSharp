@@ -33,25 +33,25 @@ namespace Ex1
                 _item.SubItems.Add(_array[3]);
                 _item.SubItems.Add(_array[4]);
                 _item.SubItems.Add(_array[5]);
-                listView1.Items.Add(_item);
+                lvCongNgheNET.Items.Add(_item);
             }
-            listView1.View = View.Details;
+            lvCongNgheNET.View = View.Details;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
-            for (int index = listView1.CheckedIndices.Count - 1; index >= 0; index--)
+            for (int index = lvCongNgheNET.CheckedIndices.Count - 1; index >= 0; index--)
             {
-                listView1.Items.RemoveAt(listView1.CheckedIndices[index]);
+                lvCongNgheNET.Items.RemoveAt(lvCongNgheNET.CheckedIndices[index]);
             }
         }
 
         private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-            if (listView1.SelectedItems.Count > 0)
+            if (lvCongNgheNET.SelectedItems.Count > 0)
             {
-                ListViewItem selectedItem = listView1.SelectedItems[0];
+                ListViewItem selectedItem = lvCongNgheNET.SelectedItems[0];
                 txtID.Text = selectedItem.Text;
                 txtName.Text = selectedItem.SubItems[1].Text;
                 txtClass.Text = selectedItem.SubItems[2].Text;
