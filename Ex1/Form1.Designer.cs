@@ -52,7 +52,7 @@ namespace Ex1
             this.btnDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lviCongNgheNET
+            // listView1
             // 
             this.lvCongNgheNET.CheckBoxes = true;
             this.lvCongNgheNET.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -91,13 +91,11 @@ namespace Ex1
             // 
             this.cHDatebirth.Text = "Ngày sinh";
             this.cHDatebirth.Width = 130;
-
             // 
             // cHGender
             // 
             this.cHGender.Text = "Giới tính";
             this.cHGender.Width = 79;
-
             // 
             // cHAddress
             // 
@@ -248,6 +246,7 @@ namespace Ex1
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lvCongNgheNET);
+
             this.Name = "frmCongNgheNET";
             this.Text = "CÔNG NGHỆ .NET";
             this.Load += new System.EventHandler(this.frmCongNgheNET_Load);
